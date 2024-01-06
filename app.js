@@ -19,7 +19,7 @@ function removeEvent(e){
 };
 
 function checkAllPopped(){
-    if (popped === 24){
+    if (popped === 25){
         console.log('all popped!');
         let gallery = document.querySelector('#balloon-gallery');
         let message = document.querySelector('#yay-no-balloons');

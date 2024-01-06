@@ -1,7 +1,9 @@
+/* This still needs fixing. It needs to clear at 25 balloons, and colors need randomizing. */
+
 body{
     font-family:sans-serif;
     padding: 30px;
-    background:#ededed;
+    background:#fcfbfb;
 }
 
 .wrapper{
@@ -38,33 +40,44 @@ h1{
     margin: 2.5px 5 px 2.5px 0px;
 }
 
-#balloon-gallery div:nth-child(3n){
+#balloon-gallery div:nth-child(5n) {
+    /* Styles for every 5th element */
     background: #ffce00;
     color: #ffce00;
 }
 
-#balloon-gallery div:nth-child(3n-1){
+#balloon-gallery div:nth-child(5n-1) {
+    /* Styles for elements that are 1 less than a multiple of 5 */
     background:#3f7abe;
     color:#3f7abe;
 }
 
-#balloon-gallery div:nth-child(5n){
+#balloon-gallery div:nth-child(5n-2) {
+    /* Styles for elements that are 2 less than a multiple of 5 */
     background:#8e7a8e;
     color:#8e7a8e;
 }
 
-#balloon-gallery div:nth-child(13){
+#balloon-gallery div:nth-child(5n-3) {
+    /* Styles for elements that are 3 less than a multiple of 5 */
     background:#8e7a8e;
     color:#8e7a8e;
 }
 
-#balloon-gallery div:nth-child(10n){
+#balloon-gallery div:nth-child(5n-4) {
+    /* Styles for elements that are 4 less than a multiple of 5 */
     background:#ff3300;
     color: #ff3300;
 }
 
 #balloon-gallery div:nth-child(4n){
     clear:right;
+}
+
+/* Additional specific selectors for individual elements if needed */
+
+#balloon-gallery div:nth-child(25) {
+    /* Styles for the 25th element */
 }
 
 #yay-no-balloons {
