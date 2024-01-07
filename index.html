@@ -5,46 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Pop the Ballons</title>
+    <title>Pop the Balloons</title>
 </head>
 
 <body>
 
     <div class="wrapper">
         <h1>Valerie's "Pop the Balloon" Game</h1>
-        <h1>Pop the balloons by moving</br>your mouse over them.</h1>
-        <div id="yay-no-balloons"><span class="blue">Wow!</span> You popped all the balloons!</div>
-        <div id="balloon-gallery">
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
+        <h2>Pop the balloons by moving your mouse over them.</h2>
+        <div id="yay-no-balloons" style="display:none;">
+            <span class="blue">Wow!</span> You popped all the balloons!
         </div>
-
+        <div id="balloon-gallery"></div>
     </div>
+
     <script src="app.js"></script>
+    <script>
+        // JavaScript for dynamically generating balloons
+        const balloonGallery = document.getElementById('balloon-gallery');
+        const totalBalloons = 25;
+
+        for (let i = 0; i < totalBalloons; i++) {
+            const balloon = document.createElement('div');
+            balloon.classList.add('balloon');
+            balloonGallery.appendChild(balloon);
+        }
+    </script>
 
 </body>
-
 </html>

@@ -1,22 +1,24 @@
+const TOTAL_BALLOONS = 25;
 let popped = 0;
 
-function balloonHandler(e) {
-    if (e.target.className === "balloon") {
-        e.target.style.backgroundColor = "#ededed";
-        e.target.textContent = "POP!";
+function popBalloon(e) {
+    const target = e.target;
+    if (target.classList.contains("balloon")) {
+        target.style.backgroundColor = "#ededed";
+        target.textContent = "POP!";
         popped++;
-        e.target.removeEventListener('mouseover', balloonHandler); // Remove the event listener
+        target.removeEventListener('mouseover', popBalloon);
         checkAllPopped();
     }
 }
 
-document.addEventListener('mouseover', balloonHandler);
+document.querySelector('#balloon-gallery').addEventListener('mouseover', popBalloon);
 
 function checkAllPopped() {
-    if (popped === 25) {
+    if (popped === TOTAL_BALLOONS) {
         console.log('all popped!');
-        let gallery = document.querySelector('#balloon-gallery');
-        let message = document.querySelector('#yay-no-balloons');
+        const gallery = document.querySelector('#balloon-gallery');
+        const message = document.querySelector('#yay-no-balloons');
         gallery.innerHTML = '';
         message.style.display = 'block';
     }

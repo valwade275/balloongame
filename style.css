@@ -27,8 +27,8 @@ h1{
 
 #balloon-gallery div{
     background: #ff3300;
-    height: 121px;
-    width: 119px;
+    height: 80px;
+    width: 80px;
     text-align: center;
     color: #ff3300;
     font-size: 40px;
@@ -37,7 +37,7 @@ h1{
     margin-top: 20px;
     display: inline-block;
     /* float: left; */
-    margin: 2.5px 5 px 2.5px 0px;
+    margin: 2.5px 5px 2.5px 0px;
 }
 
 #balloon-gallery div:nth-child(5n) {
@@ -60,8 +60,8 @@ h1{
 
 #balloon-gallery div:nth-child(5n-3) {
     /* Styles for elements that are 3 less than a multiple of 5 */
-    background:#8e7a8e;
-    color:#8e7a8e;
+    background:#25be70;
+    color:#25be70;
 }
 
 #balloon-gallery div:nth-child(5n-4) {
@@ -70,15 +70,15 @@ h1{
     color: #ff3300;
 }
 
-#balloon-gallery div:nth-child(4n){
+/* #balloon-gallery div:nth-child(25) {
+    Styles for the 25th element  
+    background: #7543ef;
+    color: #7543ef;
+} */
+
+/* #balloon-gallery div:nth-child(4n){
     clear:right;
-}
-
-/* Additional specific selectors for individual elements if needed */
-
-#balloon-gallery div:nth-child(25) {
-    /* Styles for the 25th element */
-}
+} */
 
 #yay-no-balloons {
     display:none;
