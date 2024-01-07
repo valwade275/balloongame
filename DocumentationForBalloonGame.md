@@ -29,8 +29,6 @@ Description
 
     function checkAllPopped() {...};: Checks if the number of popped balloons (popped) is 24. If so, it logs "all popped!" to the console, empties the HTML content of the element with the ID balloon-gallery, and displays a hidden element with the ID yay-no-balloons.
 
-## I need to fix this!! 
-The removeEvent function won't work as intended due to the incorrect use of removeEventListener. To properly remove the event listener, I need to store a reference to the function and use the same reference to remove it.
 
 # CSS Notes
 
@@ -64,23 +62,24 @@ This CSS code is designed to create a visually appealing balloon gallery with di
 
 # JavaScript Notes
 
-    Initialization:
+        Initialization:
         let popped = 0;: Initializes a counter to keep track of popped balloons.
 
-    Event Listener:
-        document.addEventListener('mouseover', function(e) {...});: Listens for mouseover events on the entire document. When the mouse moves over an element:
-            Checks if the element has a class of "balloon".
-            If the condition is met, it changes the background color of the balloon to light gray (#ededed), sets its content to "POP!", increments the popped counter, attempts to remove the event listener for that specific balloon (not properly), and checks if all balloons have been popped.
+    balloonHandler Function:
+        This function handles the behavior when a mouseover event occurs.
+        It checks if the element that triggered the event has a class of "balloon".
+        If it's a balloon, it changes its background color to light gray (#ededed), displays "POP!" as text, increments the popped counter, and removes the event listener for that specific balloon. This ensures that once a balloon is popped, it no longer responds to mouseover events.
+        After popping a balloon, it checks if all 25 balloons have been popped by calling checkAllPopped().
 
-    Function removeEvent(e):
-        This function is intended to remove the event listener from the specific balloon being interacted with. However, it's not properly removing the event listener because the function provided to removeEventListener doesn't match the one added with addEventListener. To remove an event listener, the functions must match, which is not the case here.
+    document.addEventListener('mouseover', balloonHandler);:
+        Listens for mouseover events on the entire document.
+        When a mouseover event occurs, it triggers the balloonHandler function.
 
-    Function checkAllPopped():
-        Checks if the number of popped balloons (popped) is equal to 24.
-        If 24 balloons have been popped:
+    checkAllPopped Function:
+        Checks if the number of popped balloons (popped) is equal to 25.
+        If 25 balloons have been popped:
             Logs "all popped!" to the console.
             Empties the HTML content of the element with the ID balloon-gallery.
-            Changes the style to display the element with the ID yay-no-balloons (likely a message indicating that all balloons have been popped). This element is initially hidden (display: none;).
+            Changes the style to display the element with the ID yay-no-balloons, indicating that all balloons have been popped. This element is initially hidden (display: none;).
 
-Don't forget to fix this!!  
-The removeEvent function isn't set up to remove the event listener correctly. To fix this, I need to define the event handler function separately and then reference it in both addEventListener and removeEventListener.
+This code creates an interactive game where balloons change appearance when hovered over and, once 25 balloons have been popped, triggers a message or action to indicate that all balloons have been popped. The event listener ensures that balloons can only be popped once by removing their ability to react to further mouseover events after being popped.
