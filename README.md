@@ -11,8 +11,9 @@ The HTML code sets up the web page for my "Pop the Balloon" game. It includes st
     - **Inline JavaScript:** This code contains a script that dynamically generates balloons inside the `balloon-gallery` div.
 
 ## CSS Styling
-I have set up the CSS code for my "Pop the Balloon" game so that the user sees a few rows of circles (balloons) of different colors. 
+I have set up the CSS code for my "Pop the Balloon" game so that the user sees a few rows of circles (balloons) of different colors. Once a balloon is popped, the user will see text saying "Pop!" replacing the balloon.  
 
 ## JavaScript Functionality
 
-
+The JavaScript code manages the behavior of the balloons in the game. It detects mouseovers on balloons, marks them as popped, and checks if all balloons have been popped. Once all balloons are popped, the game displays a message indicating that the game is over. This code uses foundational JavaScript components such as variables, functions, and event listeners.  
+- **TOTAL_BALLOONS:** The constant to determine the total count of balloons. The event listener is attached to the parent container (`#balloon-gallery`) using event delegation, reducing the number of individual listeners. The logic for popping balloons and checking if all balloons are popped is separated for clarity and maintainability.
